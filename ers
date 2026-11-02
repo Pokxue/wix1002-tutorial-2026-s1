@@ -1,0 +1,117 @@
+[1mdiff --git a/tutorial-04/answers.md b/tutorial-04/answers.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82260a1[m
+[1m--- /dev/null[m
+[1m+++ b/tutorial-04/answers.md[m
+[36m@@ -0,0 +1,110 @@[m
+[32m+[m[32m# WIX1002 Fundamentals of Programming[m
+[32m+[m
+[32m+[m[32m## Tutorial 4: Flow of Control (Repetition)[m
+[32m+[m
+[32m+[m[32m### Question 1: Write statements for each of the following.[m
+[32m+[m
+[32m+[m[32m#### (a) Find the largest integer n so that n³ is less than 2000.[m
+[32m+[m[32mint n = 0;[m
+[32m+[m[32mwhile ((n + 1) * (n + 1) * (n + 1) < 2000) {[m
+[32m+[m[32m    n++;[m
+[32m+[m[32m}[m
+[32m+[m[32mSystem.out.println("n = " + n);[m
+[32m+[m
+[32m+[m[32m#### (b) Display the square number of the first twelve integers starting from 1.[m
+[32m+[m
+[32m+[m[32mint i=1;[m
+[32m+[m[32mwhile( i <=12)[m
+[32m+[m[32m{[m
+[32m+[m[32m System.out.println(i + " squared is " + i * i);[m
+[32m+[m[32m i++;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#### (c) Display a 4-by-5 matrix using random numbers within 0 to 100.[m
+[32m+[m[32mRandom generator = new Random();[m[41m            [m
+[32m+[m[32mfor (int row = 1; row <= 4; row++) {[m[41m     [m
+[32m+[m[32m    for (int col = 1; col <= 5; col++) {[m[41m  [m
+[32m+[m[32m        System.out.printf("%5d", generator.nextInt(101));[m[41m   [m
+[32m+[m[32m    }[m
+[32m+[m[32m    System.out.println();[m[41m                 [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#### (d) Compute the sum of numbers from 1 to a given number.[m
+[32m+[m[32mScanner sc = new Scanner(System.in);[m[41m [m
+[32m+[m[32m        System.out.print("Enter a number: ");[m
+[32m+[m[32m        int number = sc.nextInt();[m
+[32m+[m[32m        int sum = 0;[m
+[32m+[m[32m        for (int i = 1; i <= number; i++) {[m
+[32m+[m[32m            sum =sum +i;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        System.out.println("Sum of 1 to " + number + " = " + sum);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#### (e) Compute the sum of the series: 1/25 + 2/24 + 3/23 + ... + 25/1 in two decimal places.[m
+[32m+[m
+[32m+[m[32mdouble sum = 0;[m
+[32m+[m[32mfor (int i = 1; i <= 25; i++) {[m
+[32m+[m[32m    sum += (double) i / (26 - i);[m[41m   [m
+[32m+[m[32m}[m
+[32m+[m[32mSystem.out.printf("Sum = %.2f%n", sum);[m
+[32m+[m
+[32m+[m
+[32m+[m[32m### Question 2: Correct the error for the following statements.[m
+[32m+[m
+[32m+[m[32m#### (a)[m
+[32m+[m[32m**Corrected statements:**[m
+[32m+[m[32mint sum;[m
+[32m+[m[32mfor (int x = 10; x > 0; x--)[m
+[32m+[m[32msum += x;[m
+[32m+[m
+[32m+[m[32m#### (b)[m
+[32m+[m[32m**Corrected statements:**[m
+[32m+[m
+[32m+[m[32mint x = 0, y = 0;[m
+[32m+[m[32mdo[m[41m [m
+[32m+[m[32m{[m
+[32m+[m[32m    x += 2;[m
+[32m+[m[32m    y += x;[m
+[32m+[m[32m    System.out.println(x + " and " + y);[m
+[32m+[m[32m}[m[41m [m
+[32m+[m[32mwhile (x < 100);[m
+[32m+[m
+[32m+[m[32m#### (c)[m
+[32m+[m[32m**Corrected statements:**[m
+[32m+[m
+[32m+[m[32mint x, y;[m
+[32m+[m[32mfor (x = 1, y = 20; x < y; x++, y -= 2)[m
+[32m+[m[32m    System.out.println(x + " " + y);[m
+[32m+[m
+[32m+[m[32m#### (d)[m
+[32m+[m[32m**Corrected statements:**[m
+[32m+[m[41m [m
+[32m+[m[32mint i=1;[m
+[32m+[m[32mwhile(i<=10)[m
+[32m+[m[32m{[m
+[32m+[m[32m if (i==10)[m
+[32m+[m[32m  {[m
+[32m+[m[32m    System.out.print("Program End");[m
+[32m+[m[32m  }[m
+[32m+[m[32mi++;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m### Question 3: Write the statements that display the first ten values of the Fibonacci sequence. Given the formula f₁ = 1, f₂ = 1, fₙ = fₙ₋₁ + fₙ₋₂.[m
+[32m+[m
+[32m+[m[32mint first = 1;[m
+[32m+[m[32mint second = 1;[m
+[32m+[m[32mSystem.out.print(first + " " + second + " ");[m
+[32m+[m[32mfor (int i = 3; i <= 10; i++) {[m
+[32m+[m[32m    int next = first + second;[m
+[32m+[m[32m    System.out.print(next + " ");[m
+[32m+[m[32m    first = second;[m
+[32m+[m[32m    second = next;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m### Question 4: Write the statements that display the string in reverse order. (Use `String.length()` to get the length of the string.)[m
+[32m+[m
+[32m+[m[32mfor (int i = str.length() - 1; i >= 0; i--) {[m
+[32m+[m[32m    System.out.print(str.charAt(i));[m
+[32m+[m[32m}[m
+\ No newline at end of file[m

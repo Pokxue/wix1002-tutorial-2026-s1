@@ -1,0 +1,505 @@
+[1mdiff --git a/tutorial-01/answers.md b/tutorial-01/answers.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..360ec96[m
+[1m--- /dev/null[m
+[1m+++ b/tutorial-01/answers.md[m
+[36m@@ -0,0 +1,498 @@[m
+[32m+[m[32m# Tutorial 1[m
+[32m+[m
+[32m+[m[32m## Part I[m
+[32m+[m
+[32m+[m[32m### Question 1: Request two numbers from the user and print the multiplication of the numbers.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| `num1`, `num2` | Multiply `num1` by `num2` | Product |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    READ num1[m
+[32m+[m[32m    READ num2[m
+[32m+[m[32m    product ← num1 × num2[m
+[32m+[m[32m    DISPLAY product[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B[/Read num1/][m
+[32m+[m[32m    B --> C[/Read num2/][m
+[32m+[m[32m    C --> D[product ← num1 × num2][m
+[32m+[m[32m    D --> E[/Display product/][m
+[32m+[m[32m    E --> F([Stop])[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 2: Determine whether a random number is greater than 50.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| Random integer `n` (0–100) | Check whether `n > 50` | Number and comparison result |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    n ← RANDOM_INTEGER(0, 100)[m
+[32m+[m[32m    IF n > 50 THEN[m
+[32m+[m[32m        DISPLAY n, "Greater than 50"[m
+[32m+[m[32m    ELSE[m
+[32m+[m[32m        DISPLAY n, "Not greater than 50"[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["n ← RANDOM_INTEGER(0, 100)"][m
+[32m+[m[32m    B --> C{"n > 50?"}[m
+[32m+[m[32m    C -- Yes --> D[/Display n, Greater than 50/][m
+[32m+[m[32m    C -- No --> E[/Display n, Not greater than 50/][m
+[32m+[m[32m    D --> F([Stop])[m
+[32m+[m[32m    E --> F[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 3: Print the pass/fail grade based on the mark entered by user. The passing mark is at least 40.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| `mark` | Check whether the mark is valid and determine the grade | Invalid mark, Pass, or Fail |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    READ mark[m
+[32m+[m[32m    IF mark < 0 OR mark > 100 THEN[m
+[32m+[m[32m        DISPLAY "Invalid mark"[m
+[32m+[m[32m    ELSE IF mark >= 40 THEN[m
+[32m+[m[32m        DISPLAY "Pass"[m
+[32m+[m[32m    ELSE[m
+[32m+[m[32m        DISPLAY "Fail"[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B[/Read mark/][m
+[32m+[m[32m    B --> C{"mark < 0 OR mark > 100?"}[m
+[32m+[m[32m    C -- Yes --> D[/Display Invalid mark/][m
+[32m+[m[32m    C -- No --> E{"mark >= 40?"}[m
+[32m+[m[32m    E -- Yes --> F[/Display Pass/][m
+[32m+[m[32m    E -- No --> G[/Display Fail/][m
+[32m+[m[32m    D --> H([Stop])[m
+[32m+[m[32m    F --> H[m
+[32m+[m[32m    G --> H[m
+[32m+[m[32m```[m
+[32m+[m[32m### Question 4: Print the results of the two players’ dice game.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| Two generated die values, `p1` and `p2` (1–6) | Compare `p1` and `p2` to determine the winner | Both dice values; winner or draw |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    p1 ← RANDOM_INTEGER(1, 6)[m
+[32m+[m[32m    p2 ← RANDOM_INTEGER(1, 6)[m
+[32m+[m[32m    DISPLAY p1, p2[m
+[32m+[m[32m    IF p1 > p2 THEN[m
+[32m+[m[32m        DISPLAY "Player 1 wins"[m
+[32m+[m[32m    ELSE IF p2 > p1 THEN[m
+[32m+[m[32m        DISPLAY "Player 2 wins"[m
+[32m+[m[32m    ELSE[m
+[32m+[m[32m        DISPLAY "Draw"[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["p1 ← RANDOM_INTEGER(1, 6)"][m
+[32m+[m[32m    B --> C["p2 ← RANDOM_INTEGER(1, 6)"][m
+[32m+[m[32m    C --> D[/Display p1, p2/][m
+[32m+[m[32m    D --> E{"p1 > p2?"}[m
+[32m+[m[32m    E -- Yes --> F[/Display Player 1 wins/][m
+[32m+[m[32m    E -- No --> G{"p2 > p1?"}[m
+[32m+[m[32m    G -- Yes --> H[/Display Player 2 wins/][m
+[32m+[m[32m    G -- No --> I[/Display Draw/][m
+[32m+[m[32m    F --> J([Stop])[m
+[32m+[m[32m    H --> J[m
+[32m+[m[32m    I --> J[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 5: Print the perimeter of a rectangle.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| Length and width in cm | Check whether length and width are valid; calculate perimeter = 2 × (length + width) | Perimeter in cm or an invalid-dimensions message |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    READ length, width[m
+[32m+[m[32m    IF length <= 0 OR width <= 0 THEN[m
+[32m+[m[32m        DISPLAY "Invalid dimensions"[m
+[32m+[m[32m    ELSE[m
+[32m+[m[32m        perimeter ← 2 × (length + width)[m
+[32m+[m[32m        DISPLAY perimeter[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B[/Read length, width/][m
+[32m+[m[32m    B --> C{"length <= 0 OR width <= 0?"}[m
+[32m+[m[32m    C -- Yes --> D[/Display Invalid dimensions/][m
+[32m+[m[32m    C -- No --> E["perimeter ← 2 × (length + width)"][m
+[32m+[m[32m    E --> F[/Display perimeter/][m
+[32m+[m[32m    D --> G([Stop])[m
+[32m+[m[32m    F --> G[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 6: Print the minimum number from 10 random numbers generated by computer.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| 10 generated integers (0–100) | Compare the numbers to find the minimum | The 10 numbers and the minimum number |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    minimum ← RANDOM_INTEGER(0, 100)[m
+[32m+[m[32m    DISPLAY minimum[m
+[32m+[m[32m    count ← 1[m
+[32m+[m[32m    WHILE count < 10 DO[m
+[32m+[m[32m        n ← RANDOM_INTEGER(0, 100)[m
+[32m+[m[32m        DISPLAY n[m
+[32m+[m[32m        IF n < minimum THEN[m
+[32m+[m[32m            minimum ← n[m
+[32m+[m[32m        END IF[m
+[32m+[m[32m        count ← count + 1[m
+[32m+[m[32m    END WHILE[m
+[32m+[m[32m    DISPLAY minimum[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["minimum ← RANDOM_INTEGER(0, 100)"][m
+[32m+[m[32m    B --> C[/Display minimum/][m
+[32m+[m[32m    C --> D["count ← 1"][m
+[32m+[m[32m    D --> E{"count < 10?"}[m
+[32m+[m[32m    E -- Yes --> F["n ← RANDOM_INTEGER(0, 100)"][m
+[32m+[m[32m    F --> G[/Display n/][m
+[32m+[m[32m    G --> H{"n < minimum?"}[m
+[32m+[m[32m    H -- Yes --> I["minimum ← n"][m
+[32m+[m[32m    H -- No --> J["count ← count + 1"][m
+[32m+[m[32m    I --> J[m
+[32m+[m[32m    J --> E[m
+[32m+[m[32m    E -- No --> K[/Display minimum/][m
+[32m+[m[32m    K --> L([Stop])[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 7: Count the number of odd and even numbers from 10 random numbers generated by the computer.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| 10 generated integers (10–100) | Check whether each number is even or odd and count them | The 10 numbers, odd count, and even count |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32m    even = 0[m
+[32m+[m[32m    odd = 0[m
+[32m+[m[32m    count = 0[m
+[32m+[m[32m    WHILE count < 10 DO[m
+[32m+[m[32m        n = RANDOM_INTEGER(10, 100)[m
+[32m+[m[32m        DISPLAY n[m
+[32m+[m[32m        IF n % 2 = 0 THEN[m
+[32m+[m[32m            even = even + 1[m
+[32m+[m[32m        ELSE[m
+[32m+[m[32m            odd = odd + 1[m
+[32m+[m[32m        END IF[m
+[32m+[m[32m        count = count + 1[m
+[32m+[m[32m    END WHILE[m
+[32m+[m[32m    DISPLAY even, odd[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["even = 0, odd = 0, count = 0"][m
+[32m+[m[32m    B --> C{"count < 10?"}[m
+[32m+[m[32m    C -- Yes --> D["n = RANDOM_INTEGER(10, 100)"][m
+[32m+[m[32m    D --> E[/Display n/][m
+[32m+[m[32m    E --> F{"n % 2 = 0?"}[m
+[32m+[m[32m    F -- Yes --> G["even = even + 1"][m
+[32m+[m[32m    F -- No --> H["odd = odd + 1"][m
+[32m+[m[32m    G --> I["count = count + 1"][m
+[32m+[m[32m    H --> I[m
+[32m+[m[32m    I --> C[m
+[32m+[m[32m    C -- No --> J[/Display even, odd/][m
+[32m+[m[32m    J --> K([Stop])[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m## Part II[m
+[32m+[m
+[32m+[m[32m### Question 8: Count the number of alphabet U and M from a sentence entered by user.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| One complete sentence | Inspect each character and count the occurrences of `U` and `M` | Separate `U` count and `M` count |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32mREAD sentence[m
+[32m+[m[32muCount ← 0[m
+[32m+[m[32mmCount ← 0[m
+[32m+[m[32mi ← 0[m
+[32m+[m[32mWHILE i < LENGTH(sentence) DO[m
+[32m+[m[32m    ch ← CHARACTER_AT(sentence, i)[m
+[32m+[m[32m    IF ch = 'U' THEN[m
+[32m+[m[32m        uCount ← uCount + 1[m
+[32m+[m[32m    ELSE IF ch = 'M' THEN[m
+[32m+[m[32m        mCount ← mCount + 1[m
+[32m+[m[32m    END IF[m
+[32m+[m[32m    i ← i + 1[m
+[32m+[m[32mEND WHILE[m
+[32m+[m[32mDISPLAY uCount, mCount[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B[/Read sentence/][m
+[32m+[m[32m    B --> C["uCount = 0, mCount = 0, i = 0"][m
+[32m+[m[32m    C --> D{"i < sentence length?"}[m
+[32m+[m[32m    D -- Yes --> E["Read character at i: ch"][m
+[32m+[m[32m    E --> F{"ch = 'U'?"}[m
+[32m+[m[32m    F -- Yes --> G["uCount = uCount + 1"][m
+[32m+[m[32m    F -- No --> H{"ch = 'M'?"}[m
+[32m+[m[32m    H -- Yes --> I["mCount = mCount + 1"][m
+[32m+[m[32m    H -- No --> J["i = i + 1"][m
+[32m+[m[32m    G --> J[m
+[32m+[m[32m    I --> J[m
+[32m+[m[32m    J --> D[m
+[32m+[m[32m    D -- No --> K[/Display uCount, mCount/][m
+[32m+[m[32m    K --> L([Stop])[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 9: Display the frequency of a keyword from a web page[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| Extracted page text and one keyword | Normalize case; split into words; count exact matches | Keyword and frequency |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32mREAD pageText, keyword[m
+[32m+[m[32mVALIDATE keyword is one non-empty word[m
+[32m+[m[32mwords ← TOKENIZE(LOWERCASE(pageText))[m
+[32m+[m[32mcount ← 0[m
+[32m+[m[32mFOR EACH word IN words DO[m
+[32m+[m[32m    IF word = LOWERCASE(keyword) THEN[m
+[32m+[m[32m        count ← count + 1[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mEND FOR[m
+[32m+[m[32mDISPLAY keyword, count[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B[/Read pageText, keyword/][m
+[32m+[m[32m    B --> C{"Is keyword one non-empty word?"}[m
+[32m+[m[32m    C -- No --> D[/Display invalid keyword message/][m
+[32m+[m[32m    C -- Yes --> E["words = TOKENIZE(LOWERCASE(pageText))"][m
+[32m+[m[32m    E --> F["count = 0, i = 0"][m
+[32m+[m[32m    F --> G{"i < number of words?"}[m
+[32m+[m[32m    G -- Yes --> H{"words[i] = LOWERCASE(keyword)?"}[m
+[32m+[m[32m    H -- Yes --> I["count = count + 1"][m
+[32m+[m[32m    H -- No --> J["i = i + 1"][m
+[32m+[m[32m    I --> J[m
+[32m+[m[32m    J --> G[m
+[32m+[m[32m    G -- No --> K[/Display keyword, count/][m
+[32m+[m[32m    D --> L([Stop])[m
+[32m+[m[32m    K --> L[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 10: Display the number of female students from a random list of 100 students[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| 100 randomly generated student labels (F, M, X) | Count the number of F labels | Student labels and female count |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32mfemaleCount ← 0[m
+[32m+[m[32mFOR index FROM 1 TO 100 DO[m
+[32m+[m[32m    label ← RANDOM_CHOICE('F', 'M', 'X')[m
+[32m+[m[32m    DISPLAY index, label[m
+[32m+[m[32m    IF label = 'F' THEN[m
+[32m+[m[32m        femaleCount ← femaleCount + 1[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mEND FOR[m
+[32m+[m[32mDISPLAY femaleCount[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["femaleCount = 0, index = 1"][m
+[32m+[m[32m    B --> C{"index <= 100?"}[m
+[32m+[m[32m    C -- Yes --> D["label = RANDOM_CHOICE('F', 'M', 'X')"][m
+[32m+[m[32m    D --> E[/Display index, label/][m
+[32m+[m[32m    E --> F{"label = 'F'?"}[m
+[32m+[m[32m    F -- Yes --> G["femaleCount = femaleCount + 1"][m
+[32m+[m[32m    F -- No --> H["index = index + 1"][m
+[32m+[m[32m    G --> H[m
+[32m+[m[32m    H --> C[m
+[32m+[m[32m    C -- No --> I[/Display femaleCount/][m
+[32m+[m[32m    I --> J([Stop])[m
+[32m+[m[32m```[m
+[32m+[m[32m### Question 11: Display a list of 5 random numbers in descending order. (Sort)[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| 5 generated integers | Sort the array ascending; traverse it backwards | A descending list |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32mGENERATE five random integers into numbers[m
+[32m+[m[32mSORT numbers in ascending order[m
+[32m+[m[32mindex ← LENGTH(numbers) - 1[m
+[32m+[m[32mWHILE index >= 0 DO[m
+[32m+[m[32m    DISPLAY numbers[index][m
+[32m+[m[32m    index ← index - 1[m
+[32m+[m[32mEND WHILE[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["Generate 5 random integers"][m
+[32m+[m[32m    B --> C["Sort numbers in ascending order"][m
+[32m+[m[32m    C --> D["index = LENGTH(numbers) - 1"][m
+[32m+[m[32m    D --> E{"index >= 0?"}[m
+[32m+[m[32m    E -- Yes --> F["Display numbers[index]"][m
+[32m+[m[32m    F --> G["index = index - 1"][m
+[32m+[m[32m    G --> E[m
+[32m+[m[32m    E -- No --> H([Stop])[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Question 12: Guess a random number generated by computer.[m
+[32m+[m
+[32m+[m[32m#### 1. Input-Process-Output (IPO) Model[m
+[32m+[m
+[32m+[m[32m| Input | Process | Output |[m
+[32m+[m[32m|---|---|---|[m
+[32m+[m[32m| A fixed random target and repeated guesses | Compare guess with target; repeat while unequal | Higher, Lower, or Correct; attempt count |[m
+[32m+[m
+[32m+[m[32m#### 2. Pseudocode[m
+[32m+[m
+[32m+[m[32m```text[m
+[32m+[m[32mSTART[m
+[32m+[m[32mtarget ← RANDOM_INTEGER(1, 100)[m
+[32m+[m[32mattempts ← 0[m
+[32m+[m[32mREPEAT[m
+[32m+[m[32m    READ guess[m
+[32m+[m[32m    IF guess < 1 OR guess > 100 THEN[m
+[32m+[m[32m        DISPLAY "Enter 1–100"[m
+[32m+[m[32m    ELSE[m
+[32m+[m[32m        attempts ← attempts + 1[m
+[32m+[m[32m        IF guess < target THEN[m
+[32m+[m[32m            DISPLAY "Higher"[m
+[32m+[m[32m        ELSE IF guess > target THEN[m
+[32m+[m[32m            DISPLAY "Lower"[m
+[32m+[m[32m        ELSE[m
+[32m+[m[32m            DISPLAY "Correct", attempts[m
+[32m+[m[32m        END IF[m
+[32m+[m[32m    END IF[m
+[32m+[m[32mUNTIL guess = target[m
+[32m+[m[32mSTOP[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m#### 3. Flowchart[m
+[32m+[m
+[32m+[m[32m```mermaid[m
+[32m+[m[32mflowchart TD[m
+[32m+[m[32m    A([Start]) --> B["Generate target from 1 to 100"][m
+[32m+[m[32m    B --> C["attempts = 0"][m
+[32m+[m[32m    C --> D[/Read guess/][m
+[32m+[m[32m    D --> E{"Guess within 1-100?"}[m
+[32m+[m[32m    E -- No --> F[/Display Enter 1-100/][m
+[32m+[m[32m    F --> D[m
+[32m+[m[32m    E -- Yes --> G["attempts = attempts + 1"][m
+[32m+[m[32m    G --> H{"guess < target?"}[m
+[32m+[m[32m    H -- Yes --> I[/Display Higher/][m
+[32m+[m[32m    I --> D[m
+[32m+[m[32m    H -- No --> J{"guess > target?"}[m
+[32m+[m[32m    J -- Yes --> K[/Display Lower/][m
+[32m+[m[32m    K --> D[m
+[32m+[m[32m    J -- No --> L[/Display Correct, attempts/][m
+[32m+[m[32m    L --> M([Stop])[m
+[32m+[m[32m```[m
+\ No newline at end of file[m
